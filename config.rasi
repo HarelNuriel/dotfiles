@@ -1,0 +1,95 @@
+* {
+	font: "monospace 12";
+
+	bg: #0b1016;
+	bg-alt: #1d262f;
+	fg: #c0cbd6;
+	primary: #63cdcf;
+	secondary: #719cd6;
+	alert: #c94f6d;
+
+	bg-glass: #0b1016E6;
+
+	background-color: transparent;
+	text-color: @fg;
+}
+
+configuration {
+	modes: "window,drun,run";
+	show-icons: true;
+	window-format: "{w} | {c} | {t}";
+}	
+
+window {
+	background-color: @bg-glass;
+}
+
+mainbox {
+	background-color: @bg-glass;
+	children: [ inputbar, listview, mode-switcher ];
+	spacing: 10px;
+	padding: 10px;
+	border: 2px;
+}
+
+prompt {
+	text-color: @primary;
+}
+
+entry {
+	text-color: @fg;
+	padding: 0px 10px;
+}
+
+inputbar {
+	background-color: @bg-alt;
+	text-color: @fg;
+}
+
+button, textbox {
+	background-color: @bg-alt;
+	text-color: @fg;
+	padding: 5px;
+}
+
+button selected {
+	background-color: @primary;
+}
+
+listview {
+	background-color: @bg-alt;
+}
+
+scrollbar {
+	background-color: @bg-alt;
+	handle-color: @primary;
+}
+
+element {
+	padding: 5px;
+	background-color: transparent;
+	text-color: @fg;
+}
+
+element selected {
+	background-color: @primary;
+	text-color: @bg;
+}
+
+element-text, element-icon {
+	background-color: inherit;
+	text-color:	  inherit;
+}
+
+element normal.normal,
+element alternate.normal {
+	background-color: transparent;
+	text-color: @fg;
+}
+
+element selected.normal,
+element selected.alternate,
+element selected.actice {
+	background-color: @primary;
+	text-color: @bg;
+}
