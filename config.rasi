@@ -1,14 +1,14 @@
 * {
 	font: "monospace 12";
 
-	bg: #0b1016;
-	bg-alt: #1d262f;
-	fg: #c0cbd6;
-	primary: #63cdcf;
-	secondary: #719cd6;
-	alert: #c94f6d;
+	bg: #05080f;
+	bg-alt: #111827;
+	fg: #cce6ff;
+	primary: #00f0ff;
+	secondary: #ff4d00;
+	alert: #374151;
 
-	bg-glass: #0b1016E6;
+	bg-glass: #05080fE6;
 
 	background-color: transparent;
 	text-color: @fg;
@@ -54,6 +54,7 @@ button, textbox {
 
 button selected {
 	background-color: @primary;
+	text-color: @bg;
 }
 
 listview {
