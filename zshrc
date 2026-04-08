@@ -16,12 +16,15 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt APPEND_HISTORY
 
-[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
-if [ -e ~/.dircolors ]; then
-	eval "$(dircolors -b ~/.dircolors)"
+if [ -e $HOME/.zsh_aliases ]; then
+    source $HOME/.zsh_aliases
 fi
 
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+if [ -e $HOME/.dircolors ]; then
+	eval "$(dircolors -b $HOME/.dircolors)"
+fi
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin:/opt/cmake-4.3.1-linux-x86_64/bin/"
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git)

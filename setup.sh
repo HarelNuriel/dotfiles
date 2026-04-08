@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-apt install -y xserver-xorg xinit x11-xserver-utils bspwm sxhkd feh picom polybar alacritty zsh curl lm-sensors
+apt install -y rofi xserver-xorg xinit x11-xserver-utils bspwm sxhkd feh picom polybar alacritty zsh curl lm-sensors zsh-syntax-highlighting zsh-autosuggestions
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
@@ -9,8 +9,9 @@ tar -C /opt -xzf ~/Downloads/nvim-linux-x86_64.tar.gz
 
 sensors-detect
 
+user=${SUDO_USER:-$USER}
 git_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-home=/home/${SUDO_USER:-$USER}
+home=/home/$user
 
 bspwm=$home/.config/bspwm
 sxhkd=$home/.config/sxhkd
@@ -51,4 +52,9 @@ ln -s $git_dir/config.rasi $rofi/config.rasi
 
 chmod +x $git_dir/bspwmrc
 chmod +x $git_dir/polybar/launch.sh
-chmod +x $git_dir/custom-scripts/cpu-temp.sh
+
+for file in "$git_dir/custom-scripts/"*.sh; do
+    chmod +x "$file"
+done
+
+chown $user:$user -R $home

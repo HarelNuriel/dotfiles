@@ -123,3 +123,27 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# lock screen
+ctrl + alt + l
+    $HOME/.config/custom-scripts/lock.sh
+
+#
+# Audio Controls
+#
+
+# Raise Volume
+XF86AudioRaiseVolume
+    pamixer -i 5
+
+# Lower Volume
+XF86AudioLowerVolume
+    pamixer -d 5
+
+# Mute/Unmute Audio
+XF86AudioMute
+    pamixer -t
+
+# Mute/Unmute Microphone
+XF86AudioMicMute
+    pamixer --default-source -t

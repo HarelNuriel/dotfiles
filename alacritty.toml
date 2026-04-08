@@ -3,6 +3,13 @@ opacity = 0.7
 padding = { x = 15, y = 15 }
 dynamic_padding = true
 
+[font]
+size=10.0
+
+[font.normal]
+family = "DroidSansM Nerd Font"
+style = "regular"
+
 [colors.primary]
 background = "#05080f"
 foreground = "#cce6ff"
