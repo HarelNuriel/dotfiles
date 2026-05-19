@@ -147,3 +147,11 @@ XF86AudioMute
 # Mute/Unmute Microphone
 XF86AudioMicMute
     pamixer --default-source -t
+
+# open wifi manager
+super + n
+    $HOME/.config/ronema/ronema
+
+# flameshot
+PrintScreen
+    flameshot gui

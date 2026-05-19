@@ -18,6 +18,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+setxkbmap -layout us,il -option grp:alt_shift_toggle
 xset s 300 600
 
 $HOME/.config/polybar/launch.sh &

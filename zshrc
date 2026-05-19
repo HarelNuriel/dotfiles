@@ -16,16 +16,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt APPEND_HISTORY
 
-if [ -e $HOME/.zsh_aliases ]; then
-    source $HOME/.zsh_aliases
-fi
-
-if [ -e $HOME/.dircolors ]; then
-	eval "$(dircolors -b $HOME/.dircolors)"
-fi
-
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin:/opt/cmake-4.3.1-linux-x86_64/bin/"
+export PATH="$PATH:/opt/clion-2026.1.1/bin:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin:/opt/cmake-4.3.1-linux-x86_64/bin/"
 export ZSH="$HOME/.oh-my-zsh"
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 plugins=(git)
 
@@ -34,6 +27,15 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /etc/profile.d/ghidra.sh
+
+if [ -e $HOME/.zsh_aliases ]; then
+    source $HOME/.zsh_aliases
+fi
+
+if [ -e $HOME/.dircolors ]; then
+	eval "$(dircolors -b $HOME/.dircolors)"
+fi
 
 NEWLINE=$'\n'
 
